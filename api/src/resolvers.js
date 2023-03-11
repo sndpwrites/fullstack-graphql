@@ -5,17 +5,20 @@
 
 module.exports = {
   Query: {
-    pets(iv, args, { models }) {
-      return models.Pet.findMany();
+    pets(iv, { input }, { models }) {
+      return models.Pet.findMany(input);
     },
+    petOne(iv, { input }, { models }) {
+      return models.Pet.findOne(input);
+    },
+    // Mutation: {},
+    // Pet: {
+    //   img(pet) {
+    //     return pet.type === "DOG"
+    //       ? "https://placedog.net/300/300"
+    //       : "http://placekitten.com/300/300";
+    //   },
+    // },
+    // User: {},
   },
-  // Mutation: {},
-  // Pet: {
-  //   img(pet) {
-  //     return pet.type === "DOG"
-  //       ? "https://placedog.net/300/300"
-  //       : "http://placekitten.com/300/300";
-  //   },
-  // },
-  // User: {},
 };
