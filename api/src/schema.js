@@ -22,10 +22,19 @@ const typeDefs = gql`
     type: String
   }
 
+  input createPetInput {
+    name: String!
+    type: String!
+  }
+
   type Query {
     pets(input: PetInput): [Pet]!
     petOne(input: PetInput): Pet
     me: User!
+  }
+
+  type Mutation {
+    createPet(input: createPetInput!): Pet!
   }
 `;
 

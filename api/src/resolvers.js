@@ -21,4 +21,10 @@ module.exports = {
     // },
     // User: {},
   },
+  Mutation: {
+    createPet(_, { input }, { models }) {
+      const pet = models.Pet.create(input);
+      return pet;
+    },
+  },
 };
